@@ -74,24 +74,30 @@ static void select_menu_item(int input)
 {
     switch (input) {
         case 1:
-            menu_item_1();
+            generate_wf();
             go_back_to_main();
             break;
         case 2:
-            menu_item_2();
+            save_load_wf();
             go_back_to_main();
             break;
         case 3:
-            menu_item_3();
+            plot_wf();
             go_back_to_main();
             break;
         case 4:
-            menu_item_4();
+            export_wf();
             go_back_to_main();
             break;
-        default:
-            printf("Bye!\n");
+        case 5:
+            presets();
+            go_back_to_main();
+        case 6:
+            printf("Exiting program...\n");
             exit(0);
+        default:
+            printf("Invalid input, bye!\n");
+            exit(1);
     }
 }
 
@@ -100,11 +106,12 @@ static void print_main_menu(void)
     printf("\n----------- Main menu -----------\n");
     printf("\n"
            "\t\t\t\t\t\t\n"
-           "\t1. Menu item 1\t\t\n"
-           "\t2. Menu item 2\t\t\n"
-           "\t3. Menu item 3\t\t\n"
-           "\t4. Menu item 4\t\t\n"
-           "\t5. Exit\t\t\t\t\n"
+           "\t1. Generate new waveform\t\t\n"
+           "\t2. Load/Save waveform\t\t\n"
+           "\t3. Plot waveform/s\t\t\n"
+           "\t4. Export waveform\t\t\n"
+           "\t5. Presets\t\t\n"
+           "\t6. Exit\t\t\t\t\n"
            "\t\t\t\t\t\t\n");
     printf("---------------------------------------------\n");
 }
